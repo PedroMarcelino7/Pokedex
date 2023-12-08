@@ -1,2 +1,2 @@
 # Pokedex
-Type a invalid pokemon name for surprise!
+Search for a invalid pokémon for SURPRISE!
