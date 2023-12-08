@@ -1,7 +1,0 @@
-Criar array com local storage no PokeCard para armazenar os favoritos
-
-Colocar mensagem de erro se não encontrar nada no filtro
-
-Colocar "skeletons" para mostrar que a pagina está carregando
-
-** Ver outra API de pokedex para alterar os sprites
