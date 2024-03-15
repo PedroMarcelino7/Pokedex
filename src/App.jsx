@@ -129,12 +129,12 @@ export default function App() {
 
         <Navbar onGenerationChange={handleGenerationChange} filter={filter} />
 
-        <Container maxWidth='xl'>
+        <Container maxWidth=''>
           {showQuote && <KanyeQuotes />}
 
           <Grid container spacing={2}>
             {pokemons.map((pokemon, key) => (
-              <Grid item xl={3} lg={3} md={4} sm={6} xs={12} key={key}>
+              <Grid item xl={2} lg={3} md={4} sm={6} xs={12} key={key}>
                 <Box display='flex' justifyContent='center'>
                   {loading ? (
                     <Skeleton variant="rectangular" width={210} height={118} />
