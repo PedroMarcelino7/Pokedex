@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import PokeCard from './components/Card/PokeCard';
 import { useEffect, useState } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Box, Container, CssBaseline, Grid } from '@mui/material';
+import { Box, Container, CssBaseline, Grid, Skeleton } from '@mui/material';
 import axios from 'axios';
 import Functions from './components/MoreFunctions/Functions';
 import KanyeQuotes from './components/KanyeQuotes/KanyeQuotes';
@@ -18,6 +18,7 @@ export default function App() {
   const [shiny, setShiny] = useState(false)
   const [rotate, setRotate] = useState('front')
   const filteredPokemons = []
+  const [loading, setLoading] = useState(true)
 
   const handleGenerationChange = (selectedGen) => {
     if (selectedGen === 'All Generations') {
@@ -53,9 +54,13 @@ export default function App() {
     }
   }
 
-
   useEffect(() => {
     getPokemons()
+    setLoading(true)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 4500);
   }, [start, limit])
 
   const getPokemons = () => {
@@ -131,15 +136,20 @@ export default function App() {
             {pokemons.map((pokemon, key) => (
               <Grid item xl={3} lg={3} md={4} sm={6} xs={12} key={key}>
                 <Box display='flex' justifyContent='center'>
-                  <PokeCard
-                    name={pokemon.data.name}
-                    number={pokemon.data.id}
-                    image={shiny ? pokemon.data.sprites[`${rotate}_shiny`] : pokemon.data.sprites[`${rotate}_default`]}
-                    type1={pokemon.data.types[0].type.name}
-                    type2={pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name : null}
-                    stats={pokemon.data.stats}
-                    moves={pokemon.data.moves}
-                  />
+                  {loading ? (
+                    <Skeleton variant="rectangular" width={210} height={118} />
+                  ) : (
+                    <PokeCard
+                      name={pokemon.data.name}
+                      number={pokemon.data.id}
+                      image={shiny ? pokemon.data.sprites[`${rotate}_shiny`] : pokemon.data.sprites[`${rotate}_default`]}
+                      type1={pokemon.data.types[0].type.name}
+                      type2={pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name : null}
+                      stats={pokemon.data.stats}
+                      moves={pokemon.data.moves}
+                    />
+                  )
+                  }
                 </Box>
               </Grid>
             ))}
