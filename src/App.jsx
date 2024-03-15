@@ -51,11 +51,7 @@ export default function App() {
       setStart(906)
       setLimit(1017)
     }
-
-    // console.log(selectedGen)
-    // console.log('start: ' + start)
-    // console.log('limit: ' + limit)
-  } 
+  }
 
 
   useEffect(() => {
@@ -133,16 +129,18 @@ export default function App() {
 
           <Grid container spacing={2}>
             {pokemons.map((pokemon, key) => (
-              <Grid item xl={3} lg={3} md={4} sm={6} xs={12} key={key} >
-                <PokeCard
-                  name={pokemon.data.name}
-                  number={pokemon.data.id}
-                  image={shiny ? pokemon.data.sprites[`${rotate}_shiny`] : pokemon.data.sprites[`${rotate}_default`]}
-                  type1={pokemon.data.types[0].type.name}
-                  type2={pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name : null}
-                  stats={pokemon.data.stats}
-                  moves={pokemon.data.moves}
-                />
+              <Grid item xl={3} lg={3} md={4} sm={6} xs={12} key={key}>
+                <Box display='flex' justifyContent='center'>
+                  <PokeCard
+                    name={pokemon.data.name}
+                    number={pokemon.data.id}
+                    image={shiny ? pokemon.data.sprites[`${rotate}_shiny`] : pokemon.data.sprites[`${rotate}_default`]}
+                    type1={pokemon.data.types[0].type.name}
+                    type2={pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name : null}
+                    stats={pokemon.data.stats}
+                    moves={pokemon.data.moves}
+                  />
+                </Box>
               </Grid>
             ))}
           </Grid>
@@ -152,6 +150,6 @@ export default function App() {
         <Functions changeTheme={changeTheme} theme={theme} changeShiny={changeShiny} changeRotate={changeRotate} />
 
       </ThemeProvider>
-    </Box>
+    </Box >
   )
 }

@@ -1,7 +1,17 @@
-Criar array com local storage no PokeCard para armazenar os favoritos
+#Colocar "skeletons" para mostrar que a pagina está carregando
 
-Colocar mensagem de erro se não encontrar nada no filtro
+#** Ver outra API de pokedex para alterar os sprites
 
-Colocar "skeletons" para mostrar que a pagina está carregando
 
-** Ver outra API de pokedex para alterar os sprites
+
+#ARRUMAR ISSO NOS CARDS (MAPEAR)
+#<Collapse in={expandedStats}>
+#                        <Typography heading variant='h6' marginTop='0.5rem' marginBottom='1.5rem'>
+#                            {stats[0].base_stat} | {stats[0].stat.name} <br />
+#                            {stats[1].base_stat} | {stats[1].stat.name} <br />
+#                            {stats[2].base_stat} | {stats[2].stat.name} <br />
+#                            {stats[3].base_stat} | {stats[3].stat.name} <br />
+#                            {stats[4].base_stat} | {stats[4].stat.name} <br />
+#                            {stats[5].base_stat} | {stats[5].stat.name}
+#                        </Typography>
+#                    </Collapse>

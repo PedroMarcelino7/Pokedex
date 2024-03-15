@@ -7,6 +7,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 export default function Functions({ changeTheme, theme, changeShiny, changeRotate }) {
     const [themeIcon, setThemeIcon] = React.useState(<DarkModeIcon />)
@@ -19,6 +20,7 @@ export default function Functions({ changeTheme, theme, changeShiny, changeRotat
         { icon: themeIcon, name: formatedThemeName() },
         { icon: <AutoAwesomeIcon />, name: 'Shiny' },
         { icon: <ThreeSixtyIcon />, name: 'Rotate' },
+        { icon: <ExitToAppIcon />, name: 'Leave' },
     ];
 
     const handleAction = (name) => {

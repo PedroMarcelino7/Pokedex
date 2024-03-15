@@ -119,7 +119,9 @@ export default function PokeCard({ name, number, image, type1, type2, stats, mov
     }
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{
+            width: 350
+        }}>
             <CardHeader
                 action={
                     <IconButton onClick={handleFavorite}>
